@@ -9,19 +9,33 @@ import UIKit
 
 class PostViewController: UIViewController {
 
+    var tbButton: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //заголовок экрана
+        title = "Head title"
         
+        //цвет фона
         view.backgroundColor = .systemBlue
-        title = "Post"
-       
-        }
         
+        //создаем кнопку
+        tbButton = UIBarButtonItem(title: "Bar", style: .plain, target: self, action: #selector(tbClick))
         
+        //указываем, что кнопка должна находиться справа
+        self.navigationItem.rightBarButtonItem = tbButton
         
     }
-    
-
+    //создаем функцию для работы кнопки
+    @objc func tbClick(sender: UIBarButtonItem) {
+       
+        print("Bar click")
+        
+        let infoVC = InfoViewController()
+        
+        self.navigationController?.present(infoVC, animated: true, completion: nil)
+}
+}
     /*
     // MARK: - Navigation
 

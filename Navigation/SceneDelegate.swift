@@ -18,22 +18,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         let window = UIWindow(windowScene: winScene)
         
+        //создаем экземпляр tapBar
         let tabBarController = UITabBarController()
         
+        //создаем 2 контроллерам экзем
         let feedVC = FeedViewController()
+        
         let profileVC = ProfileViewController()
         
+        //прописываем экземпляры 2 тапбаров в NavController
         let feedNavigationController = UINavigationController(rootViewController: feedVC)
         
         let profileNavigationController = UINavigationController(rootViewController: profileVC)
         
+        //создаем массив для их объединения
         tabBarController.viewControllers = [feedNavigationController, profileNavigationController]
         
+        //указываем название, присваиваем картинку
         feedNavigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "newspaper"), tag: 0)
         
         profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 1)
                 
-        
+        //указываем, что рут контроллером является созданный экземпляр тапбара
         window.rootViewController = tabBarController
         
         window.makeKeyAndVisible()

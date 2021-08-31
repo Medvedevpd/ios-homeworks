@@ -10,6 +10,7 @@
 		229E562326DCEA8200B4B016 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E562226DCEA8200B4B016 /* FeedViewController.swift */; };
 		229E562526DCEA8E00B4B016 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E562426DCEA8E00B4B016 /* ProfileViewController.swift */; };
 		229E566526DD549700B4B016 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E566426DD549700B4B016 /* PostViewController.swift */; };
+		229E566726DEA92F00B4B016 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229E566626DEA92F00B4B016 /* InfoViewController.swift */; };
 		22B6802926D946AB001EB804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B6802826D946AB001EB804 /* AppDelegate.swift */; };
 		22B6802B26D946AB001EB804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B6802A26D946AB001EB804 /* SceneDelegate.swift */; };
 		22B6802D26D946AB001EB804 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B6802C26D946AB001EB804 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 		229E562226DCEA8200B4B016 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		229E562426DCEA8E00B4B016 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		229E566426DD549700B4B016 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		229E566626DEA92F00B4B016 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		22B6802526D946AB001EB804 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B6802826D946AB001EB804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22B6802A26D946AB001EB804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				22B6802826D946AB001EB804 /* AppDelegate.swift */,
 				22B6802A26D946AB001EB804 /* SceneDelegate.swift */,
 				229E566426DD549700B4B016 /* PostViewController.swift */,
+				229E566626DEA92F00B4B016 /* InfoViewController.swift */,
 				229E562226DCEA8200B4B016 /* FeedViewController.swift */,
 				229E562426DCEA8E00B4B016 /* ProfileViewController.swift */,
 				22B6802C26D946AB001EB804 /* ViewController.swift */,
@@ -145,6 +148,7 @@
 				229E566526DD549700B4B016 /* PostViewController.swift in Sources */,
 				22B6802D26D946AB001EB804 /* ViewController.swift in Sources */,
 				22B6802926D946AB001EB804 /* AppDelegate.swift in Sources */,
+				229E566726DEA92F00B4B016 /* InfoViewController.swift in Sources */,
 				229E562526DCEA8E00B4B016 /* ProfileViewController.swift in Sources */,
 				229E562326DCEA8200B4B016 /* FeedViewController.swift in Sources */,
 				22B6802B26D946AB001EB804 /* SceneDelegate.swift in Sources */,

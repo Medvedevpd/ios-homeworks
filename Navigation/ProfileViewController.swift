@@ -11,8 +11,8 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //указываем цвет
         view.backgroundColor = .systemRed
-        
         
     }
     
