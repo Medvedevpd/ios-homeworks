@@ -12,19 +12,26 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBlue
-
-    }
+        view.backgroundColor = .systemGreen
+                
+        let postButton = UIButton.init(frame: CGRect(x: 50, y: 100, width: 50, height: 100))
+        
+        let postVC = PostViewController()
+        
+        postButton.setTitle("Post", for: .normal)
+        postButton.setTitleColor(UIColor.black, for: .normal)
+        postButton.tag = 2
+        postButton.addTarget(postVC, action: #selector(buttonClick), for: UIControl.Event.touchUpInside)
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       
+        self.view.addSubview(postButton)
+        
+       
     }
-    */
-
+    @objc func buttonClick(sender: UIButton) {
+        print("click")
+        let postViewController = PostViewController()
+        self.navigationController?.pushViewController(postViewController, animated: true)
+        
+    }
 }

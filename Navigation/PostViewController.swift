@@ -14,8 +14,11 @@ class PostViewController: UIViewController {
         
         view.backgroundColor = .systemBlue
         title = "Post"
-
-        // Do any additional setup after loading the view.
+       
+        }
+        
+        
+        
     }
     
 
@@ -29,4 +32,5 @@ class PostViewController: UIViewController {
     }
     */
 
-}
+
+
