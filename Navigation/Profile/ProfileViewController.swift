@@ -14,6 +14,16 @@ class ProfileViewController: UIViewController {
         //указываем цвет
         view.backgroundColor = .lightGray
         
+        //создаем экземпляр класса ProfileHeaderView
+        let profileHV = ProfileHeaderView()
+        
+        //Добавляем его в качестве subview
+        view.addSubview(profileHV)
+        
+        
+        viewWillLayoutSubviews()
+        profileHV.frame = view.frame
+        
     }
     
 
