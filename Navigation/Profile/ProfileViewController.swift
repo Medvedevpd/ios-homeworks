@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  Navigation
 //
-//  Created by Pavel Medvedev on 01.09.2021.
+//  Created by Pavel Medvedev on 30.08.2021.
 //
 
 import UIKit
@@ -11,8 +11,9 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //указываем цвет
+        view.backgroundColor = .lightGray
+        
     }
     
 
