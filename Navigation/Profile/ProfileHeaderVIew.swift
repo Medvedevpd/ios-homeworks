@@ -75,5 +75,13 @@ class ProfileHeaderVIew: UIView {
         showStatusButton.layer.shadowOpacity = 0.7
         showStatusButton.layer.cornerRadius = 4
         
+        showStatusButton.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
+        
     }
+    @objc func buttonPressed(sender: UIButton) {
+        print(lowerLabel.text ?? "Error")
+       
+        
+    }
+    
 }
