@@ -8,22 +8,32 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    var shareView = ProfileHeaderVIew()
 
+        override func loadView() {
+            view = shareView
+        }
+   
+      
     override func viewDidLoad() {
         super.viewDidLoad()
         //указываем цвет
         view.backgroundColor = .lightGray
         
         //создаем экземпляр класса ProfileHeaderView
-        let profileHV = ProfileHeaderView()
+        let profileHV = ProfileHeaderVIew()
         
         //Добавляем его в качестве subview
         view.addSubview(profileHV)
-        
-        
+        title = "Profile"
+
         viewWillLayoutSubviews()
-        profileHV.frame = view.frame
         
+        
+      
+        
+        
+
     }
     
 
