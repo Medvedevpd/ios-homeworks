@@ -9,14 +9,16 @@ import UIKit
 
 class ProfileHeaderVIew: UIView {
 
-    //создаем свойства класса для фреймов
+    //создаем свойства класса для фреймf avatar
     let avatarView = UIView()
     let avatarLayer = CALayer()
     let avatarImage = UIImage(named: "Cat")?.cgImage
     
+    //создаем верхний лейбл и нижнюю подпись
     var upperLabel = UILabel()
-    var lowerLabel = UILabel()
+    var lowerLabel = UITextField()
     
+    //создаем большую синюю кнопку
     let showStatusButton = UIButton.init(frame: CGRect(x: 16, y: (91 + 100 + 32), width: 360, height: 50))
     
     override init(frame: CGRect) {
@@ -28,12 +30,13 @@ class ProfileHeaderVIew: UIView {
         super.init(coder: aDecoder)
         createSubviews()
     }
+    
     func createSubviews() {
         
+        //настраиваем avatarView
         avatarView.frame = CGRect(origin: CGPoint(x: 16, y: (91+16)), size: CGSize(width: 100, height: 100))
-        
         avatarView.bounds = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
-
+        
         avatarView.layer.borderColor = UIColor.white.cgColor
         avatarView.layer.borderWidth = 3
         avatarView.layer.backgroundColor = UIColor.white.cgColor
@@ -44,10 +47,12 @@ class ProfileHeaderVIew: UIView {
         avatarLayer.cornerRadius = 5
         avatarLayer.contents = avatarImage
        
+        //добавляем во View avatarView
         
         avatarView.layer.addSublayer(avatarLayer)
         addSubview(avatarView)
         
+        //настраиваем верхний лейбл
         upperLabel.frame = CGRect(x: 150, y: (27 + 91), width: 300, height: 27)
         upperLabel.text = "Hipster cat"
         upperLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
@@ -55,18 +60,15 @@ class ProfileHeaderVIew: UIView {
         
         addSubview(upperLabel)
         
+        //настраиваем нижнее текстовое поле
         lowerLabel.frame = CGRect(x: 150, y: (27 + 91 + 50), width: 300, height: 27)
-        lowerLabel.text = "Waiting for something"
+        lowerLabel.placeholder = "Waiting for something..."
         lowerLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lowerLabel.textColor = .gray
         
         addSubview(lowerLabel)
-        
-        
-     
-        
-       addSubview(showStatusButton)
-        
+       
+        //Настраиваем кнопку по заданию
         showStatusButton.setTitle("Show status", for: .normal)
         showStatusButton.backgroundColor = UIColor.systemBlue
         showStatusButton.layer.shadowOffset = .init(width: 4, height: 4)
@@ -77,11 +79,13 @@ class ProfileHeaderVIew: UIView {
         
         showStatusButton.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
         
+        //Добавляем отображение кнопки на экране
+        addSubview(showStatusButton)
     }
+    
+    //Указываем функцию работы кнопки и ее отображения
     @objc func buttonPressed(sender: UIButton) {
-        print(lowerLabel.text ?? "Error")
-       
-        
+        print(lowerLabel.text ?? "Enter something to see in console")
     }
     
 }
