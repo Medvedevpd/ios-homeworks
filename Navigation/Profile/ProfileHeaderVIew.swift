@@ -11,16 +11,24 @@ import UIKit
 class ProfileHeaderVIew: UIView {
 
     //создаем свойства класса для фреймf avatar
-    let avatarView = UIView()
+//    let avatarView = UIView()
+    let avatarImageView = UIView()
+    
     let avatarLayer = CALayer()
     let avatarImage = UIImage(named: "Cat")?.cgImage
     
     //создаем верхний лейбл и нижнюю подпись
-    var upperLabel = UILabel()
-    var lowerLabel = UITextField()
+//    var upperLabel = UILabel()
+    var fullNameLabel = UILabel()
+//
+//    var lowerLabel = UITextField()
+    var statusLabel = UILabel()
+    
+    var statusTextField = UITextField()
+    var setStatusButton =UIButton.init(frame: CGRect(x: 16, y: (91 + 100 + 32), width: 360, height: 50))
     
     //создаем большую синюю кнопку
-    let showStatusButton = UIButton.init(frame: CGRect(x: 16, y: (91 + 100 + 32), width: 360, height: 50))
+//    let showStatusButton = UIButton.init(frame: CGRect(x: 16, y: (91 + 100 + 32), width: 360, height: 50))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,40 +42,60 @@ class ProfileHeaderVIew: UIView {
     
     func createSubviews() {
         
-        //настраиваем avatarView
-        avatarView.frame = CGRect(origin: CGPoint(x: 16, y: (91+16)), size: CGSize(width: 100, height: 100))
-        avatarView.bounds = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        fullNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        statusLabel.translatesAutoresizingMaskIntoConstraints = false
+        statusTextField.translatesAutoresizingMaskIntoConstraints = false
+        setStatusButton.translatesAutoresizingMaskIntoConstraints = false
         
+        addSubview(avatarImageView)
+        addSubview(fullNameLabel)
+        addSubview(statusLabel)
+        addSubview(statusTextField)
+        addSubview(setStatusButton)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //настраиваем avatarView
+//        avatarView.frame = CGRect(origin: CGPoint(x: 16, y: (91+16)), size: CGSize(width: 100, height: 100))
+//        avatarView.bounds = CGRect(origin: .zero, size: CGSize(width: 100, height: 100))
+//
         avatarView.layer.borderColor = UIColor.white.cgColor
         avatarView.layer.borderWidth = 3
         avatarView.layer.backgroundColor = UIColor.white.cgColor
         avatarView.layer.cornerRadius = avatarView.bounds.height / 2
         
-        avatarLayer.frame = avatarView.bounds
-        avatarLayer.masksToBounds = true
-        avatarLayer.cornerRadius = 5
-        avatarLayer.contents = avatarImage
+//        avatarLayer.frame = avatarView.bounds
+//        avatarLayer.masksToBounds = true
+//        avatarLayer.cornerRadius = 5
+//        avatarLayer.contents = avatarImage
        
         //добавляем во View avatarView
         
-        avatarView.layer.addSublayer(avatarLayer)
-        addSubview(avatarView)
+//        avatarView.layer.addSublayer(avatarLayer)
+//        addSubview(avatarView)
         
         //настраиваем верхний лейбл
-        upperLabel.frame = CGRect(x: 150, y: (27 + 91), width: 300, height: 27)
+//        upperLabel.frame = CGRect(x: 150, y: (27 + 91), width: 300, height: 27)
         upperLabel.text = "Hipster cat"
         upperLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         upperLabel.textColor = .black
         
-        addSubview(upperLabel)
+//        addSubview(upperLabel)
         
         //настраиваем нижнее текстовое поле
-        lowerLabel.frame = CGRect(x: 150, y: (27 + 91 + 50), width: 300, height: 27)
+//        lowerLabel.frame = CGRect(x: 150, y: (27 + 91 + 50), width: 300, height: 27)
         lowerLabel.placeholder = "Waiting for something..."
         lowerLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         lowerLabel.textColor = .gray
         
-        addSubview(lowerLabel)
+//        addSubview(lowerLabel)
        
         //Настраиваем кнопку по заданию
         showStatusButton.setTitle("Show status", for: .normal)
@@ -81,7 +109,7 @@ class ProfileHeaderVIew: UIView {
         showStatusButton.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
         
         //Добавляем отображение кнопки на экране
-        addSubview(showStatusButton)
+//        addSubview(showStatusButton)
     }
     
     //Указываем функцию работы кнопки и ее отображения
