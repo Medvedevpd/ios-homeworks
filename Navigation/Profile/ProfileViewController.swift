@@ -29,6 +29,16 @@ class ProfileViewController: UIViewController {
 
         viewWillLayoutSubviews()
         
+        let constraints = [
+            profileHV.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            profileHV.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 0),
+            profileHV.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: 0),
+            profileHV.heightAnchor.constraint(equalToConstant: 220)
+        
+        ]
+        view.setNeedsLayout()
+        view.layoutIfNeeded()
+        NSLayoutConstraint.activate(constraints)
         
       
         
