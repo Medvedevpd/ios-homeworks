@@ -89,15 +89,3 @@ class ProfileHeaderVIew: UIView {
         print(statusTextField.text ?? "Enter something to see in console")
     }
 }
-
-
-//let constraints = [
-//    shareView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 0),
-//    shareView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 0),
-//    shareView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: 0),
-//    shareView.heightAnchor.constraint(equalToConstant: 220)
-//    
-//]
-//view.setNeedsLayout()
-//layoutIfNeeded()
-//NSLayoutConstraint.activate(constraints)
