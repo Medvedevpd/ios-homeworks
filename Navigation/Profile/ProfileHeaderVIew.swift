@@ -25,7 +25,9 @@ class ProfileHeaderVIew: UIView {
 //    var statusLabel = UILabel()
     
     var statusTextField = UITextField()
-    var setStatusButton = UIButton.init(frame: CGRect(x: 16, y: (91 + 100 + 32), width: 360, height: 50))
+    var setStatusButton = UIButton()
+    
+//    var newLowerButton = UIButton()
     
     //создаем большую синюю кнопку
 //    let showStatusButton = UIButton.init(frame: CGRect(x: 16, y: (91 + 100 + 32), width: 360, height: 50))
@@ -71,6 +73,16 @@ class ProfileHeaderVIew: UIView {
         setStatusButton.layer.shadowColor = UIColor.black.cgColor
         setStatusButton.layer.shadowOpacity = 0.7
         setStatusButton.layer.cornerRadius = 4
+        
+//        newLowerButton.setTitle("New button", for: .normal)
+//        newLowerButton.backgroundColor = UIColor.systemPink
+//        newLowerButton.layer.shadowOffset = .init(width: 4, height: 4)
+//        newLowerButton.layer.shadowRadius = 4
+//        newLowerButton.layer.shadowColor = UIColor.black.cgColor
+//        newLowerButton.layer.shadowOpacity = 0.7
+//        newLowerButton.layer.cornerRadius = 4
+//
+//        newLowerButton.addTarget(self, action: #selector(buttonPress), for: UIControl.Event.touchUpInside)
        
         setStatusButton.addTarget(self, action: #selector(buttonPressed), for: UIControl.Event.touchUpInside)
         
@@ -92,8 +104,12 @@ class ProfileHeaderVIew: UIView {
             
             setStatusButton.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
             setStatusButton.leftAnchor.constraint(equalTo: avatarImageView.leftAnchor),
-            setStatusButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16)
+            setStatusButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             
+//            newLowerButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor),
+//            newLowerButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
+//            newLowerButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 5),
+//            newLowerButton.heightAnchor.constraint(equalToConstant: 50)
         ]
         
         setNeedsLayout()
@@ -158,6 +174,10 @@ class ProfileHeaderVIew: UIView {
     @objc func buttonPressed(sender: UIButton) {
         print(statusTextField.text ?? "Enter something to see in console")
     }
+//
+//    @objc func buttonPress(sender: UIButton) {
+//        print("Some message")
+//    }
     
 }
 
@@ -169,3 +189,6 @@ class ProfileHeaderVIew: UIView {
 //    shareView.heightAnchor.constraint(equalToConstant: 220)
 //    
 //]
+//view.setNeedsLayout()
+//layoutIfNeeded()
+//NSLayoutConstraint.activate(constraints)
