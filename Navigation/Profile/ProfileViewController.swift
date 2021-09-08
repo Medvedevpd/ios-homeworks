@@ -28,8 +28,7 @@ class ProfileViewController: UIViewController {
         view.addSubview(newLowerButton)
         title = "Profile"
 
-        viewWillLayoutSubviews()
-        
+        //добавляем autoResizingMask into Constraints
         profileHV.translatesAutoresizingMaskIntoConstraints = false
         newLowerButton.translatesAutoresizingMaskIntoConstraints = false
 
@@ -40,7 +39,6 @@ class ProfileViewController: UIViewController {
         newLowerButton.layer.shadowColor = UIColor.black.cgColor
         newLowerButton.layer.shadowOpacity = 0.7
         newLowerButton.layer.cornerRadius = 4
-
         newLowerButton.addTarget(self, action: #selector(buttonPress), for: UIControl.Event.touchUpInside)
         
         let constraints = [
@@ -54,14 +52,12 @@ class ProfileViewController: UIViewController {
             newLowerButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             newLowerButton.heightAnchor.constraint(equalToConstant: 50)
         ]
+        
+        viewWillLayoutSubviews()
         view.setNeedsLayout()
         view.layoutIfNeeded()
         NSLayoutConstraint.activate(constraints)
         
-      
-        
-        
-
     }
     
     @objc func buttonPress(sender: UIButton) {
