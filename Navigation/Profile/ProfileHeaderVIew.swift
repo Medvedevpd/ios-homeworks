@@ -48,6 +48,7 @@ class ProfileHeaderVIew: UIView {
         statusTextField.placeholder = "Waiting for something..."
         statusTextField.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         statusTextField.textColor = .gray
+        statusTextField.backgroundColor = .white
         
         setStatusButton.setTitle("Show status", for: .normal)
         setStatusButton.backgroundColor = UIColor.systemBlue
