@@ -23,13 +23,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //создаем 2 контроллерам экзем
         let feedVC = FeedViewController()
+       
+        //по заданию изменяет переход на LoGin вместо ProfilrViewController
+       // let profileVC = ProfileViewController()
         
-        let profileVC = ProfileViewController()
+        let logInVC = LogInViewController()
         
         //прописываем экземпляры 2 тапбаров в NavController
         let feedNavigationController = UINavigationController(rootViewController: feedVC)
         
-        let profileNavigationController = UINavigationController(rootViewController: profileVC)
+        let profileNavigationController = UINavigationController(rootViewController: logInVC)
         
         //создаем массив для их объединения
         tabBarController.viewControllers = [feedNavigationController, profileNavigationController]
