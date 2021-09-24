@@ -32,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //прописываем экземпляры 2 тапбаров в NavController
         let feedNavigationController = UINavigationController(rootViewController: feedVC)
         
+        
         let profileNavigationController = UINavigationController(rootViewController: logInVC)
         
         //создаем массив для их объединения
@@ -39,9 +40,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //указываем название, присваиваем картинку
         feedNavigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "newspaper"), tag: 0)
-        
+
         profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 1)
-                
+      
+        //после обновления XCode настриваем цвет таббар
+        tabBarController.tabBar.tintColor = .blue
+        tabBarController.tabBar.unselectedItemTintColor = .gray
+        tabBarController.tabBar.backgroundColor = .systemGray6
         //указываем, что рут контроллером является созданный экземпляр тапбара
         window.rootViewController = tabBarController
         
