@@ -28,12 +28,12 @@ class InfoViewController: UIViewController {
     // прописываем функцию по которой она будет работать
     @objc func alarmClick(sender: UIButton) {
     print("alarmClick")
-        let alertVC = UIAlertController(title: "Some error", message: "Choos the destiny", preferredStyle: .alert)
-        let cancelAlert = UIAlertAction(title: "Live", style: .cancel, handler: .none)
+        let alertVC = UIAlertController(title: "Some error", message: "Choose the destiny", preferredStyle: .alert)
+        let cancelAlert = UIAlertAction(title: "Sleep", style: .cancel, handler: .none)
         
         alertVC.addAction(cancelAlert)
         
-        let okAlert = UIAlertAction(title: "Die", style: .default, handler: .none)
+        let okAlert = UIAlertAction(title: "Work", style: .default, handler: .none)
         
         alertVC.addAction(okAlert)
         present(alertVC, animated: true, completion: nil)
