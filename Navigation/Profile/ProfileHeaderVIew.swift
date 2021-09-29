@@ -47,6 +47,7 @@ class ProfileHeaderVIew: UIView {
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.black.cgColor
         textField.translatesAutoresizingMaskIntoConstraints = false
+        
         return textField
     }()
     
