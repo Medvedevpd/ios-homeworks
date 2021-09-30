@@ -34,6 +34,8 @@ class ProfileViewController: UIViewController {
         //указываем цвет
         view.backgroundColor = .lightGray
         
+      
+        
         //создаем экземпляр класса ProfileHeaderView
         let profileHV = ProfileHeaderVIew()
         
@@ -61,9 +63,19 @@ class ProfileViewController: UIViewController {
         view.setNeedsLayout()
         view.layoutIfNeeded()
         NSLayoutConstraint.activate(constraints)
+        
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+
+        swipeRecognizer.direction = .right
+        self.view.addGestureRecognizer(swipeRecognizer)
+        
     }
     
     @objc func buttonPress(sender: UIButton) {
         print("Some message")
     }
+    @objc private func handleSwipe(sender: UISwipeGestureRecognizer) {
+       dismiss(animated: true, completion: nil)
+    }
+    
 }

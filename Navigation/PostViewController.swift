@@ -24,9 +24,10 @@ class PostViewController: UIViewController {
         
         //указываем, что кнопка должна находиться справа
         self.navigationItem.rightBarButtonItem = tbButton
-        
+       
     }
     //создаем функцию для работы кнопки
+    
     @objc func tbClick(sender: UIBarButtonItem) {
        
         print("Bar click")
@@ -35,7 +36,10 @@ class PostViewController: UIViewController {
         
         self.navigationController?.present(infoVC, animated: true, completion: nil)
 }
+    
+   
 }
+
     /*
     // MARK: - Navigation
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
    
     let logoImageView: UIImageView = {
         var image = UIImageView(image: UIImage(named: "VKLogo"))
@@ -17,8 +17,12 @@ class LogInViewController: UIViewController {
     
     var logInTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "  Email or phone"
+        textField.placeholder = "Email or phone"
+        textField.textAlignment = .left
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftViewMode = .always
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        
         textField.textColor = .black
         textField.backgroundColor = .systemGray6
         
@@ -33,17 +37,20 @@ class LogInViewController: UIViewController {
     
     var passwordTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "  Password"
+        textField.placeholder = "Password"
         textField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         textField.textColor = .black
         textField.backgroundColor = .systemGray6
-        
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftViewMode = .always
         textField.autocapitalizationType = .none
         textField.layer.cornerRadius = 10
         textField.layer.borderWidth = 0.5
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = true
+        
+        
         return textField
     }()
     
@@ -122,7 +129,16 @@ class LogInViewController: UIViewController {
             
         ]
         
+        logInTextField.delegate = self
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = -100
+        }
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: nil) { (nc) in
+            self.view.frame.origin.y = 0.0
+        }
+       
         
+       
       //  viewWillLayoutSubviews()
         view.setNeedsLayout()
         view.layoutIfNeeded()
@@ -142,7 +158,10 @@ class LogInViewController: UIViewController {
 //    }
     @objc func buttonPress(sender: UIButton) {
         print("Some message")
+        let profileViewController = ProfileViewController()
+        self.navigationController?.pushViewController(profileViewController, animated: true)
     }
+   
     
   
 }
