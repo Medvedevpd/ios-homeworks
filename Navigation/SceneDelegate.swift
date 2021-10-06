@@ -13,10 +13,50 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let winScene = (scene as? UIWindowScene) else { return }
+    
+        let window = UIWindow(windowScene: winScene)
+        
+        //создаем экземпляр tapBar
+        let tabBarController = UITabBarController()
+        
+        //создаем 2 контроллерам экзем
+        let feedVC = FeedViewController()
+       
+        //по заданию изменяет переход на LoGin вместо ProfilrViewController
+       // let profileVC = ProfileViewController()
+        
+        let logInVC = LogInViewController()
+        
+        //прописываем экземпляры 2 тапбаров в NavController
+        let feedNavigationController = UINavigationController(rootViewController: feedVC)
+        
+        
+        let profileNavigationController = UINavigationController(rootViewController: logInVC)
+        
+        //создаем массив для их объединения
+        tabBarController.viewControllers = [feedNavigationController, profileNavigationController]
+        
+        //указываем название, присваиваем картинку
+        feedNavigationController.tabBarItem = UITabBarItem(title: "Feed", image: UIImage(systemName: "newspaper"), tag: 0)
+
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 1)
+      
+        //после обновления XCode настриваем цвет таббар
+        tabBarController.tabBar.tintColor = .blue
+        tabBarController.tabBar.unselectedItemTintColor = .gray
+        tabBarController.tabBar.backgroundColor = .systemGray6
+        //указываем, что рут контроллером является созданный экземпляр тапбара
+      
+        
+        window.rootViewController = tabBarController
+       
+        
+        window.makeKeyAndVisible()
+        
+        self.window = window
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
