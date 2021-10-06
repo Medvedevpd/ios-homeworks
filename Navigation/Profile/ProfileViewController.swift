@@ -34,8 +34,6 @@ class ProfileViewController: UIViewController {
         //указываем цвет
         view.backgroundColor = .lightGray
         
-      
-        
         //создаем экземпляр класса ProfileHeaderView
         let profileHV = ProfileHeaderVIew()
         
@@ -61,7 +59,7 @@ class ProfileViewController: UIViewController {
         
         viewWillLayoutSubviews()
         view.setNeedsLayout()
-        view.layoutIfNeeded()
+       // view.layoutIfNeeded()
         NSLayoutConstraint.activate(constraints)
         
         let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))

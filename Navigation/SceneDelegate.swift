@@ -48,7 +48,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.tabBar.unselectedItemTintColor = .gray
         tabBarController.tabBar.backgroundColor = .systemGray6
         //указываем, что рут контроллером является созданный экземпляр тапбара
+      
+        
         window.rootViewController = tabBarController
+       
         
         window.makeKeyAndVisible()
         
